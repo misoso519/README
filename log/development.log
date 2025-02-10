@@ -105,3 +105,140 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 17ms (Views: 8.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/tasks" for 172.18.0.1 at 2025-02-11 07:40:36 +0900
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+LoadError (cannot load such file -- /myapp/config/routes.rb):
+  
+railties (7.2.2.1) lib/rails/application/routes_reloader.rb:50:in `load'
+railties (7.2.2.1) lib/rails/application/routes_reloader.rb:50:in `block in load_paths'
+railties (7.2.2.1) lib/rails/application/routes_reloader.rb:50:in `each'
+railties (7.2.2.1) lib/rails/application/routes_reloader.rb:50:in `load_paths'
+railties (7.2.2.1) lib/rails/application/routes_reloader.rb:24:in `reload!'
+railties (7.2.2.1) lib/rails/application/routes_reloader.rb:38:in `block in updater'
+activesupport (7.2.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+railties (7.2.2.1) lib/rails/application/routes_reloader.rb:13:in `execute'
+railties (7.2.2.1) lib/rails/application/finisher.rb:176:in `block (2 levels) in <module:Finisher>'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:407:in `instance_exec'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:407:in `block in make_lambda'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:179:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:668:in `block (2 levels) in default_terminator'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:667:in `catch'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:667:in `block in default_terminator'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:180:in `call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:559:in `block in invoke_before'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:559:in `each'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:559:in `invoke_before'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:109:in `run_callbacks'
+activesupport (7.2.2.1) lib/active_support/execution_wrapper.rb:128:in `run'
+activesupport (7.2.2.1) lib/active_support/execution_wrapper.rb:124:in `run!'
+activesupport (7.2.2.1) lib/active_support/reloader.rb:122:in `run!'
+activesupport (7.2.2.1) lib/active_support/execution_wrapper.rb:77:in `block in run!'
+<internal:kernel>:90:in `tap'
+activesupport (7.2.2.1) lib/active_support/execution_wrapper.rb:74:in `run!'
+activesupport (7.2.2.1) lib/active_support/reloader.rb:64:in `run!'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.9) lib/rack/method_override.rb:28:in `call'
+rack (3.1.9) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.9) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+Started GET "/favicon.ico" for 172.18.0.1 at 2025-02-11 07:40:36 +0900
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/tasks" for 172.18.0.1 at 2025-02-11 07:40:40 +0900
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/tasks"):
+  
+Started GET "/tasks" for 172.18.0.1 at 2025-02-11 07:40:41 +0900
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/tasks"):
+  
+Started GET "/" for 172.18.0.1 at 2025-02-11 07:42:15 +0900
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+Started GET "/" for 172.18.0.1 at 2025-02-11 07:43:35 +0900
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+Started GET "/tasks" for 172.18.0.1 at 2025-02-11 07:43:46 +0900
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/tasks"):
+  
+  [1m[35m (1.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `tasks` CASCADE[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE `tasks` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL) DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20250210204020)[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2025-02-10 22:45:25.553992', '2025-02-10 22:45:25.553994')[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::InternalMetadata Update (1.3ms)[0m  [1m[33mUPDATE `ar_internal_metadata` SET `ar_internal_metadata`.`value` = 'test', `ar_internal_metadata`.`updated_at` = '2025-02-10 22:45:25.559730' WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('schema_sha1', 'cb837323ea4f66a121239fc162f478269cec3f11', '2025-02-10 22:45:25.565445', '2025-02-10 22:45:25.565446')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/tasks" for 172.18.0.1 at 2025-02-11 07:45:33 +0900
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by TasksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (2.7ms)[0m  [1m[34mSELECT `tasks`.* FROM `tasks`[0m
+  ↳ app/views/tasks/index.html.erb:8
+  Rendered tasks/index.html.erb within layouts/application (Duration: 8.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 121.8ms | GC: 8.7ms)
+Completed 200 OK in 141ms (Views: 121.5ms | ActiveRecord: 2.7ms (1 query, 0 cached) | GC: 8.7ms)
+
+
+Started GET "/manifest.json" for 172.18.0.1 at 2025-02-11 07:45:33 +0900
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 1.0ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 172.18.0.1 at 2025-02-11 07:45:38 +0900
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-7.2.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-7.2.2.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.4ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
