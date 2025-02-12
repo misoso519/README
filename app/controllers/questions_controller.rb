@@ -23,6 +23,8 @@ class QuestionsController < ApplicationController
     end
   end
 
+  Rails.logger.debug "Categories: #{@categories.inspect}"
+
   private
 
   def question_params
