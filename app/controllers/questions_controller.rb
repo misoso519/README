@@ -2,7 +2,7 @@ class QuestionsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
-    @questions = Question.all
+    @questions = Question.all.order(created_at: :desc) # 新しい質問が先に来るように並べ替え
   end
 
   def show

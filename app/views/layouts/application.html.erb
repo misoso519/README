@@ -19,5 +19,16 @@
   
   <body class="bg-orange-600">
     <%= yield %>
+
+    <% if user_signed_in? %>
+      <div class="user-info">
+        <p>Welcome, <%= current_user.name %>!</p>
+        <%= link_to 'Edit Profile', edit_user_registration_path %> |
+        <%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
+      </div>
+    <% else %>
+      <%= link_to "Sign Up", new_user_registration_path %> |
+      <%= link_to "Log In", new_user_session_path %>
+    <% end %>
   </body>
 </html>
