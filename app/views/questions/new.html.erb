@@ -1,0 +1,20 @@
+<h1>Create a New Question</h1>
+
+<%= form_with(model: @question, local: true) do |form| %>
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+
+  <%= form.label :body %>
+  <%= form.text_area :body %>
+
+  <%= form.label :image %>
+  <%= form.file_field :image %>
+
+  <%= form.label :video %>
+  <%= form.file_field :video %>
+
+  <%= form.label :category_id, "Category" %>
+  <%= form.collection_select :category_id, Category.all, :id, :name, prompt: "Select a Category" %>
+
+  <%= form.submit %>
+<% end %>

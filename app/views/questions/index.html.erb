@@ -1,0 +1,13 @@
+<% @questions.each do |question| %>
+  <div>
+    <h2><%= question.title %></h2>
+    <p><%= question.body %></p>
+    <% if question.image.present? %>
+      <%= image_tag question.image.url %>
+    <% end %>
+    <% if question.video.present? %>
+      <%= video_tag question.video.url, controls: true %>
+    <% end %>
+    <%= link_to 'View', question_path(question) %>
+  </div>
+<% end %>

@@ -1,0 +1,7 @@
+<h1><%= @user.name %>'s Profile</h1>
+
+<%= image_tag @user.profile_image if @user.profile_image.attached? %>
+
+<p><%= @user.bio %></p>
+
+<%= link_to 'Edit Profile', edit_user_registration_path %>

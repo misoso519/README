@@ -1,0 +1,12 @@
+<%= form_with(model: @answer, local: true) do |form| %>
+  <%= form.label :body %>
+  <%= form.text_area :body %>
+
+  <%= form.label :image %>
+  <%= form.file_field :image %>
+
+  <%= form.label :video %>
+  <%= form.file_field :video %>
+
+  <%= form.submit %>
+<% end %>

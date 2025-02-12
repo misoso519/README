@@ -1,0 +1,25 @@
+<h1><%= @question.title %></h1>
+<p><%= @question.body %></p>
+
+<% if @question.image.present? %>
+  <%= image_tag @question.image.url %>
+<% end %>
+
+<% if @question.video.present? %>
+  <%= video_tag @question.video.url, controls: true %>
+<% end %>
+
+<h2>Answers</h2>
+<% @question.answers.each do |answer| %>
+  <div>
+    <p><%= answer.body %></p>
+    <% if answer.image.present? %>
+      <%= image_tag answer.image.url %>
+    <% end %>
+    <% if answer.video.present? %>
+      <%= video_tag answer.video.url, controls: true %>
+    <% end %>
+  </div>
+<% end %>
+
+<%= render 'answers/form', question: @question %>
