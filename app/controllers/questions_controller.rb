@@ -1,8 +1,8 @@
 class QuestionsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 
   def index
-    @questions = Question.all.order(created_at: :desc) # 新しい質問が先に来るように並べ替え
+    @questions = Question.all.order(created_at: :desc)
   end
 
   def show
@@ -16,18 +16,31 @@ class QuestionsController < ApplicationController
 
   def create
     @question = current_user.questions.build(question_params)
+  
     if @question.save
-      redirect_to @question, notice: 'Question created successfully!'
+      redirect_to @question, notice: '質問が作成されました。'
     else
       render :new
     end
   end
+  
+  def edit
+    @question = Question.find(params[:id])
+    @categories = Category.all
+  end
 
-  Rails.logger.debug "Categories: #{@categories.inspect}"
+  def update
+    @question = Question.find(params[:id])
+    if @question.update(question_params)
+      redirect_to @question, notice: '質問が更新されました。'
+    else
+      render :edit
+    end
+  end
 
   private
 
   def question_params
-    params.require(:question).permit(:title, :body, :image, :video, :category_id)
+    params.require(:question).permit(:title, :body, :video, :category_id, :image)
   end
 end

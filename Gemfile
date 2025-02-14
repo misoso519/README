@@ -22,7 +22,7 @@ gem "cssbundling-rails"
 gem "jbuilder"
 gem "devise"
 gem "bcrypt", "~> 3.1.7"
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 3.0'
 gem 'mini_magick'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"

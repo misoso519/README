@@ -1,4 +1,4 @@
-ActiveRecord::Schema[7.2].define(version: 2025_02_12_143258) do
+ActiveRecord::Schema[7.2].define(version: 2025_02_12_124206) do
   create_table "answers", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.text "body"
     t.bigint "question_id", null: false

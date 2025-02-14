@@ -1,2 +1,19 @@
-<h1>Questions#show</h1>
-<p>Find me in app/views/questions/show.html.erb</p>
+<h1>投稿詳細</h1>
+<h1><%= @question.title %></h1>
+<p><%= @question.body %></p>
+
+<% if @question.image? %>  <!-- アップロード画像がある場合に実行する -->
+  <p>
+    <strong>Image:</strong>
+    <%= image_tag @question.image.url %>
+  </p>
+<% end %>
+
+<% if @question.video.present? %>
+  <video controls>
+    <source src="<%= @question.video.url %>" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+<% else %>
+  <p>No video available</p>
+<% end %>

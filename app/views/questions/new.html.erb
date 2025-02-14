@@ -21,6 +21,17 @@
   </div>
 
   <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :video, "Upload Video" %>
+    <%= form.file_field :video %>  <!-- 1つの動画を選択 -->
+  </div>
+
+  <div class="field">
     <%= form.label :category %>
     <%= form.collection_select :category_id, @categories, :id, :name, prompt: "Choose a category" %>
   </div>
