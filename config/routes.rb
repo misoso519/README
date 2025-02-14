@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   get "questions/index"
   get "categories/show"
   get "users/show"
+  
   devise_for :users
-  resources :users, only: [:show]
+
   resources :tasks, only: [:index, :show]
   resources :questions do
     resources :answers, only: [:create]
@@ -17,4 +18,8 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
   root 'questions#index'
+
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
 end
