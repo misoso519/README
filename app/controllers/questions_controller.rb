@@ -16,14 +16,21 @@ class QuestionsController < ApplicationController
 
   def create
     @question = current_user.questions.build(question_params)
-  
+    @categories = Category.all # ここでもカテゴリを取得しておく
+
+    if @question.category_id.blank?
+      # カテゴリが選択されていない場合
+      flash[:alert] = "カテゴリを選択してください"
+      render :new and return
+    end
+
     if @question.save
       redirect_to @question, notice: '質問が作成されました。'
     else
       render :new
     end
   end
-  
+
   def edit
     @question = Question.find(params[:id])
     @categories = Category.all

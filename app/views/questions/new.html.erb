@@ -1,7 +1,14 @@
 <%= form_with(model: @question, local: true) do |form| %>
-  <% if @question.errors.any? %>
+  <% if @question.errors.any? || flash[:alert].present? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
+      <h2>
+        <% if @question.errors.any? %>
+          <%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:
+        <% end %>
+        <% if flash[:alert].present? %>
+          <%= flash[:alert] %>
+        <% end %>
+      </h2>
       <ul>
         <% @question.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -25,10 +32,9 @@
     <%= form.file_field :image %>
   </div>
 
-
   <div class="field">
     <%= form.label :video, "Upload Video" %>
-    <%= form.file_field :video %>  <!-- 1つの動画を選択 -->
+    <%= form.file_field :video %>  
   </div>
 
   <div class="field">
