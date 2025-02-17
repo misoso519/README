@@ -17,3 +17,4 @@
 <% else %>
   <p>No video available</p>
 <% end %>
+<%= link_to '削除', @question, data: { turbo_method: :delete } %>

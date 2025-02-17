@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_question, only: %i[show destroy]
 
   def index
     @questions = Question.all.order(created_at: :desc)
@@ -45,9 +46,19 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def destroy
+    @question.destroy
+    redirect_to questions_path, notice: 'Question was successfully deleted.'
+  end
+
+
   private
 
   def question_params
     params.require(:question).permit(:title, :body, :video, :category_id, :image)
+  end
+
+  def set_question
+    @question = Question.find(params[:id])
   end
 end
