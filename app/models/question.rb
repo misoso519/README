@@ -1,7 +1,7 @@
 class Question < ApplicationRecord
   belongs_to :user
   belongs_to :category
-  has_many :answers
+  has_many :answers, dependent: :destroy
   mount_uploader :image, ImageUploader
   mount_uploader :video, VideoUploader
   validates :title, :body, presence: true

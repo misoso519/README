@@ -1,8 +1,9 @@
 <h1>投稿詳細</h1>
+<!-- app/views/questions/show.html.erb -->
 <h1><%= @question.title %></h1>
 <p><%= @question.body %></p>
 
-<% if @question.image? %>  <!-- アップロード画像がある場合に実行する -->
+<% if @question.image? %>
   <p>
     <strong>Image:</strong>
     <%= image_tag @question.image.url %>
@@ -17,4 +18,33 @@
 <% else %>
   <p>No video available</p>
 <% end %>
-<%= link_to '削除', @question, data: { turbo_method: :delete } %>
+
+<!-- 回答フォーム -->
+<h3>回答を投稿</h3>
+<%= form_with(model: [@question, @answer], local: false) do |form| %>
+  <div class="field">
+    <%= form.label :body, "Your Answer" %>
+    <%= form.text_area :body, rows: 5 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image, "Upload Image" %>
+    <%= form.file_field :image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :video, "Upload Video" %>
+    <%= form.file_field :video %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Submit Answer" %>
+  </div>
+<% end %>
+
+<h3>回答一覧</h3>
+<ul id="answers">
+  <% @question.answers.each do |answer| %>
+    <%= render 'answers/answer', answer: answer %>
+  <% end %>
+</ul>

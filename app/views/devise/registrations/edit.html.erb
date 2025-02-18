@@ -1,6 +1,6 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, multipart: true }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
@@ -29,6 +29,15 @@
   <div class="field">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
+  </div>
+
+  <!-- アイコンアップロードフォーム -->
+  <div class="field">
+    <%= f.label :profile_picture %><br />
+    <% if resource.profile_picture.present? %>
+      <%= image_tag resource.profile_picture.url, alt: "Profile Picture", class: "profile-picture" %>
+    <% end %>
+    <%= f.file_field :profile_picture %>
   </div>
 
   <div class="actions">

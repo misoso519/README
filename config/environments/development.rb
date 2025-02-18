@@ -1,37 +1,36 @@
 Rails.application.configure do
-  # 他の設定はそのままにして
-
   config.enable_reloading = true
   config.eager_load = false
   config.consider_all_requests_local = true
   config.server_timing = true
+
   if Rails.root.join("tmp/caching-dev.txt").exist?
     config.action_controller.perform_caching = true
     config.action_controller.enable_fragment_cache_logging = true
-
     config.cache_store = :memory_store
     config.public_file_server.headers = { "Cache-Control" => "public, max-age=#{2.days.to_i}" }
   else
     config.action_controller.perform_caching = false
     config.cache_store = :null_store
   end
+
   config.active_storage.service = :local
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.perform_caching = false
 
-  # ここにメール設定を追加
+  # メール設定（環境変数を使用）
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: 'smtp.gmail.com', # GmailのSMTPサーバー
+    address: 'smtp.gmail.com',
     port: 587,
-    user_name: 'your_email@example.com', # 自分のメールアドレス
-    password: 'your_password',           # 自分のメールパスワード
+    user_name: ENV['GMAIL_USERNAME'], # 環境変数に保存したメールアドレス
+    password: ENV['GMAIL_PASSWORD'],  # 環境変数に保存したアプリパスワード
     authentication: 'plain',
     enable_starttls_auto: true
   }
 
-  config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
+  # その他の設定
   config.active_support.deprecation = :log
   config.active_support.disallowed_deprecation = :raise
   config.active_support.disallowed_deprecation_warnings = []

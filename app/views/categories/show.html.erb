@@ -1,2 +1,13 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<h1><%= @category.name %></h1>
+
+<h2>Questions in this category:</h2>
+
+<% if @questions.any? %>
+  <ul>
+    <% @questions.each do |question| %>
+      <li><%= link_to question.title, question_path(question) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No questions available in this category.</p>
+<% end %>

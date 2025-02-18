@@ -1,0 +1,11 @@
+<h1>Search Results</h1>
+
+<% if @results.any? %>
+  <ul>
+    <% @results.each do |question| %>
+      <li><%= link_to question.title, question_path(question) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No results found.</p>
+<% end %>

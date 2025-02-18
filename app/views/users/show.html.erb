@@ -1,6 +1,10 @@
 <h1><%= @user.name %>'s Profile</h1>
 
-<%= image_tag @user.profile_image if @user.profile_image.attached? %>
+<% if @user.profile_picture? %>
+  <%= image_tag @user.profile_picture.url, alt: "Profile Image" %>
+<% else %>
+  <p>No profile picture uploaded.</p>
+<% end %>
 
 <p><%= @user.bio %></p>
 

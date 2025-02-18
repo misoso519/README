@@ -8,6 +8,19 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    @answer = Answer.new
+  end
+
+  def create_answer
+    @question = Question.find(params[:id])
+    @answer = @question.answers.new(answer_params)
+    @answer.user = current_user
+
+    if @answer.save
+      redirect_to @question, notice: '回答が投稿されました。'
+    else
+      render 'questions/show'
+    end
   end
 
   def new
@@ -17,7 +30,7 @@ class QuestionsController < ApplicationController
 
   def create
     @question = current_user.questions.build(question_params)
-    @categories = Category.all # ここでもカテゴリを取得しておく
+    @categories = Category.all
 
     if @question.category_id.blank?
       # カテゴリが選択されていない場合

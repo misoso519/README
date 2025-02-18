@@ -1,0 +1,12 @@
+<li id="answer_<%= answer.id %>">
+  <p><%= answer.body %></p>
+  <% if answer.image? %>
+    <p><strong>Image:</strong> <%= image_tag answer.image.url %></p>
+  <% end %>
+  <% if answer.video.present? %>
+    <video controls>
+      <source src="<%= answer.video.url %>" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  <% end %>
+</li>

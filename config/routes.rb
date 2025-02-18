@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  get "search/index"
   get "questions/new"
   get "questions/create"
   get "questions/show"
   get "questions/index"
   get "categories/show"
   get "users/show"
+  get 'search', to: 'search#index', as: 'search'
   
   devise_for :users
 
@@ -12,6 +14,9 @@ Rails.application.routes.draw do
   resources :questions do
     resources :answers, only: [:create]
   end
+  resources :questions, only: [:new, :create, :show, :index]
+  resources :categories, only: [:index, :show]
+  resources :categories, only: [:index]
 
   get "up" => "rails/health#show", as: :rails_health_check
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
@@ -24,6 +29,7 @@ Rails.application.routes.draw do
   end
 
   Rails.application.routes.draw do
+  get "search/index"
     resources :questions
   end
 end
