@@ -66,3 +66,4 @@ end
 
 gem "importmap-rails", "~> 2.1"
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'tailwindcss-rails', '~> 0.1.0'
